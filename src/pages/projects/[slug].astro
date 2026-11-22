@@ -1,0 +1,21 @@
+---
+import SubPageLayout from '../../layouts/SubPageLayout.astro';
+import { TODO, PROJECT_GROUPS, slugify, type Entry } from '../../data/site';
+
+export function getStaticPaths() {
+  return PROJECT_GROUPS.flatMap((group) => group.items).map((entry) => ({
+    params: { slug: slugify(entry.text) },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+---
+
+<SubPageLayout heading={entry.text}>
+  <p class="todo">{TODO}</p>
+</SubPageLayout>

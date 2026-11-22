@@ -1,0 +1,8 @@
+---
+import SubPageLayout from '../layouts/SubPageLayout.astro';
+import { TODO, TALKS } from '../data/site';
+---
+
+<SubPageLayout heading={TALKS.text}>
+  <p class="todo">{TODO}</p>
+</SubPageLayout>

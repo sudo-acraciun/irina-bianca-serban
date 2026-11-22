@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/nunito';
 import { SITE } from '../data/site';
 
 interface Props {
@@ -35,12 +36,15 @@ const sitemap = `${import.meta.env.BASE_URL}sitemap-index.xml`;
 </html>
 
 <style is:global>
+  /* Palette and type taken from stevenhouben.be, the reference layout. */
   :root {
     --bg: #ffffff;
-    --text: #1a1a1a;
-    --max-width: 1120px;
-    --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-      'Helvetica Neue', Arial, sans-serif;
+    --text: #000000;
+    --muted: #6b6b6b;
+    --link: #365ac3;
+    --accent: #ab1c08;
+    --max-width: 1000px;
+    --font: 'Nunito Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   }
 
   * {
@@ -52,13 +56,47 @@ const sitemap = `${import.meta.env.BASE_URL}sitemap-index.xml`;
     background: var(--bg);
     color: var(--text);
     font-family: var(--font);
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
 
-  img,
-  svg {
+  h1,
+  h2 {
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  img {
     max-width: 100%;
     display: block;
   }
@@ -67,6 +105,12 @@ const sitemap = `${import.meta.env.BASE_URL}sitemap-index.xml`;
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 48px 24px;
+  }
+
+  .todo {
+    color: var(--muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.875rem;
   }
 </style>

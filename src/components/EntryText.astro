@@ -1,0 +1,23 @@
+---
+import { href, NOTE_TODO, type Entry } from '../data/site';
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+const external = entry.url !== undefined && /^https?:/.test(entry.url);
+---
+
+{entry.lead}
+{
+  entry.url ? (
+    <a href={href(entry.url)} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+      {entry.text}
+    </a>
+  ) : (
+    entry.text
+  )
+}
+{entry.partners && <> x <em>{entry.partners}</em></>}
+{entry.note && <> - <span class={entry.note === NOTE_TODO ? 'todo' : undefined}>{entry.note}</span></>}
