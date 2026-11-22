@@ -1,0 +1,21 @@
+{
+  "name": "irina-bianca-serban",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website of Irina Bianca Serban",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^5.9.3"
+  }
+}

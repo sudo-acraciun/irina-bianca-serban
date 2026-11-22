@@ -1,0 +1,3 @@
+# LF everywhere, whatever core.autocrlf says: scripted edits that match across
+# a line break silently no-op on CRLF files.
+* text=auto eol=lf

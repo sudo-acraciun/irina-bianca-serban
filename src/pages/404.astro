@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../data/site';
+---
+
+<Layout title={`Page not found | ${SITE.name}`}>
+  <main class="wrap">
+    <h1>Page not found</h1>
+    <p><a href={import.meta.env.BASE_URL}>Back to the home page</a></p>
+  </main>
+</Layout>
